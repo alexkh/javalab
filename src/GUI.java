@@ -51,7 +51,8 @@
 			}
 
 			right_panel = new JPanel();
-			right_border = BorderFactory.createTitledBorder(border, "Throw Results:");
+			right_border = BorderFactory.createTitledBorder(border,
+				"Throw Results:");
 			right_panel.setBorder(right_border);
 			right_panel.setLayout(new GridLayout(4, 1, 10, 0));
 			right_panel.add(label);
@@ -94,7 +95,8 @@
 			int key_code = e.getKeyCode();
 			if(key_code > KeyEvent.VK_0 && key_code <= KeyEvent.VK_9 ) {
 				preset_num = key_code - KeyEvent.VK_0;
-			} else if(key_code > KeyEvent.VK_NUMPAD0 && key_code <= KeyEvent.VK_NUMPAD9) {
+			} else if(key_code > KeyEvent.VK_NUMPAD0
+					&& key_code <= KeyEvent.VK_NUMPAD9) {
 				preset_num = key_code - KeyEvent.VK_NUMPAD0;
 			} else {
 				return;
@@ -113,9 +115,5 @@
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			roll(Integer.parseInt(e.getActionCommand()));
-			label.setText("Preset Number: " + e.getActionCommand());
-			result_row[0].setText("4x6: 1 + 5 + 3 + 6 = 18");
-			result_row[1].setText("3x10: 4 + 9 + 10 = 23");
-			result_row[2].setText("2x20: 19 + 9 = 28");
 		}
 }
